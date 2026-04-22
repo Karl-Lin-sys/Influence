@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff6b9e;
+  --color-secondary: #7b61ff;
+  --color-accent: #ffd166;
+  --color-bg-light: #fff0f5;
+  --color-bg-dark: #2a1545;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, #ffe0eb 100%);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Magic Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 107, 158, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(255, 107, 158, 0.8); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(255, 107, 158, 0.15);
+  border-radius: 24px;
+}
+
+.btn-magic {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+.btn-magic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(123, 97, 255, 0.4);
+}
